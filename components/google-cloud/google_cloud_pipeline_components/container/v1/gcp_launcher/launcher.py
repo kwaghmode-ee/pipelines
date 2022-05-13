@@ -60,10 +60,14 @@ _JOB_TYPE_TO_ACTION_MAP = {
         bigquery_job_remote_runner.bigquery_create_model_job,
     'BigqueryPredictModelJob':
         bigquery_job_remote_runner.bigquery_predict_model_job,
+    'BigqueryExplainPredictModelJob':
+        bigquery_job_remote_runner.bigquery_explain_predict_model_job,
     'BigqueryExportModelJob':
         bigquery_job_remote_runner.bigquery_export_model_job,
     'BigqueryEvaluateModelJob':
         bigquery_job_remote_runner.bigquery_evaluate_model_job,
+    'BigqueryMLTrainingInfoJob':
+        bigquery_job_remote_runner.bigquery_ml_training_info_job,
     'DataprocPySparkBatch':
         dataproc_batch_remote_runner.create_pyspark_batch,
     'DataprocSparkBatch':
