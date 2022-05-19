@@ -64,6 +64,8 @@ _JOB_TYPE_TO_ACTION_MAP = {
         bigquery_job_remote_runner.bigquery_export_model_job,
     'BigqueryEvaluateModelJob':
         bigquery_job_remote_runner.bigquery_evaluate_model_job,
+    'BigqueryMLGlobalExplainJob':
+        bigquery_job_remote_runner.bigquery_ml_global_explain_job,
     'DataprocPySparkBatch':
         dataproc_batch_remote_runner.create_pyspark_batch,
     'DataprocSparkBatch':
@@ -194,6 +196,12 @@ def _parse_args(args):
           'DataprocPySparkBatch', 'DataprocSparkBatch',
           'DataprocSparkRBatch', 'DataprocSparkSqlBatch'
       }),
+      default=argparse.SUPPRESS)
+  parser.add_argument(
+      '--class_level_explain',
+      dest='class_level_explain',
+      type=bool,
+      required=False,
       default=argparse.SUPPRESS)
   parsed_args, _ = parser.parse_known_args(args)
   return vars(parsed_args)
