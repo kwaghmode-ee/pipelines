@@ -1,0 +1,15 @@
+{
+  "default": {
+    "training": {
+      "training_script": "dp_works_manuscripts_body_annotation_modelling/inline_citation_crossref_extraction/sagemaker_scripts/train_cross_ref_extraction.py",
+      "PYTHONPATH": "dp_works_manuscripts_body_annotation_modelling/inline_citation_crossref_extraction"
+    },
+    "deployment": {
+      "base_dir": "dp_works_manuscripts_body_annotation_modelling/inline_citation_crossref_extraction/experiment_runner",
+      "wrapper": "inline_citation_extraction_wrapper.InlineCitationExtractionModelWrapper",
+      "modules": "customized_dataset util inline_citation_extraction_wrapper.py",
+      "packages": "transformers==4.6.1 torch==1.8.1 pandas spacy",
+      "environment_variables": ""
+    }
+  }
+}
